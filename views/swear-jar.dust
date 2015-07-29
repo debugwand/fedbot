@@ -10,18 +10,18 @@
 
 	<h2>Who owes the swear jar?</h2>
 
-	<ul>
+	<ol>
 		{#totalByName}
 			<li><b>{title}:</b> £{value}</li>
 		{/totalByName}
-	</ul>
+	</ol>
 
 	<h2>What words are used?</h2>
 
-	<ul>
+	<ol>
 		{#totalByWord}
 			<li><b>{title}:</b> {value}</li>
 		{/totalByWord}
-	</ul>
+	</ol>
 
 {/content}
