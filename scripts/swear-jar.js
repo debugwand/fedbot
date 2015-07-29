@@ -17,7 +17,7 @@ var swears = new RegExp('\\b(' + [
 	'(mother ?)?fuck(ing|ers?|ed|s)?',
 	'shit(e|ting|ter|ty|test|s)?',
 	'piss(ing|er|ed|s)?',
-	'cunt(ing|s)?',
+	'cunt(ed|ing|s)?',
 	'assholes?',
 	'arseholes?',
 	'wankers?',
