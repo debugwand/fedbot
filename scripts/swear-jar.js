@@ -9,6 +9,9 @@
 'use strict';
 
 module.exports = swearJar;
+module.exports.getValue = getJarValue;
+module.exports.getValueByName = getJarValueByName;
+module.exports.getValueByWord = getJarValueByWord;
 
 var swears = new RegExp('\\b(' + [
 	'(mother ?)?fuck(ing|ers?|ed|s)?',
