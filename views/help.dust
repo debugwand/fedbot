@@ -5,9 +5,10 @@
 {/title}
 
 {<content}
-	<ul>
+	<dl>
 		{#commands}
-			<li>{.}</li>
+			<dt>{name}</dt>
+			<dd>{description}</dd>
 		{/commands}
-	</ul>
+	</dl>
 {/content}
