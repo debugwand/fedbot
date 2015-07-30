@@ -1,0 +1,29 @@
+{>"layout/main"/}
+
+{<title}
+	KERB Traders This Week
+{/title}
+
+{<content}
+
+	<h1>What's on KERB this week?</h1>
+
+	{#days}
+
+		<h2>{name}</h2>
+
+		<ul class="kerb-traders">
+			{#traders}
+				<li class="clearfix">
+					<img src="{image}" alt="{name}"/>
+					<h3>
+						<a href="{url}">{name}</a>
+					</h3>
+					{description}
+				</li>
+			{/traders}
+		</dl>
+
+	{/days}
+
+{/content}

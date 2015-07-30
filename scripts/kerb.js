@@ -17,18 +17,18 @@ var cheerio = require('cheerio');
 var request = require('request');
 
 module.exports = kerb;
+module.exports.getData = getKerbData;
 
 function kerb (robot) {
 	robot.respond(/\b(kerb|what'?s on kerb\??)\b/i, whatsOnKerb.bind(null, robot));
 }
 
 function whatsOnKerb (robot, response) {
-	request.get('http://www.kerbfood.com/kings-cross/', function (error, httpResponse, body) {
-		if (error || httpResponse.statusCode !== 200) {
+	getKerbData(function (error, days) {
+		if (error) {
 			response.send('I couldn\'t get KERB data because of a stupid error. Look at the logs.');
-			return console.error(error ? error.stack : 'HTTP Error ' + httpResponse.statusCode);
+			return console.error(error.stack);
 		}
-		var days = scrapeDataFromHtml(body);
 		var attachment = {
 			message: {
 				room: response.message.room
@@ -55,6 +55,18 @@ function whatsOnKerb (robot, response) {
 	});
 }
 
+function getKerbData (done) {
+	request.get('http://www.kerbfood.com/kings-cross/', function (error, httpResponse, body) {
+		if (error) {
+			return done(error);
+		}
+		if (httpResponse.statusCode !== 200) {
+			return done(new Error('HTTP Error ' + httpResponse.statusCode));
+		}
+		done(null, scrapeDataFromHtml(body));
+	});
+}
+
 function scrapeDataFromHtml (html) {
 	var $ = cheerio.load(html);
 	return $('#rota .rota_panel > ul > li').map(function () {
@@ -67,11 +79,13 @@ function scrapeDataFromHtml (html) {
 }
 
 function getTraderDataForDay ($, $day) {
-	return $day.find('h4').map(function () {
+	return $day.find('li').map(function () {
 		var $trader = $(this);
 		return {
-			name: $trader.text(),
-			description: $trader.next('p').text()
+			name: $trader.find('h4').text(),
+			description: $trader.find('p').text(),
+			url: 'http://www.kerbfood.com' + $trader.find('a').attr('href'),
+			image: 'http://www.kerbfood.com' + $trader.find('img').attr('src')
 		};
 	}).get();
 }

@@ -61,3 +61,38 @@ dd {
 	text-align: center;
 	color: #777;
 }
+
+
+/* KERB */
+
+.kerb-traders {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.kerb-traders > li {
+	margin: 0 0 1em 0;
+}
+.kerb-traders img {
+	float: left;
+	width: 50px;
+	margin-right: .5em;
+}
+.kerb-traders h3 {
+	margin: 0 0 .5em 0;
+}
+
+
+/* Clearfix */
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
