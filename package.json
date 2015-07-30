@@ -16,7 +16,6 @@
 		"dustjs-linkedin": "~2.7",
 		"each-module": "~1.2",
 		"hubot": "^2",
-		"hubot-diagnostics": "0.0.1",
 		"hubot-google-images": "~0.1",
 		"hubot-help": "~0.1",
 		"hubot-heroku-keepalive": "0.0.4",
