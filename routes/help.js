@@ -14,7 +14,7 @@ function processHelpCommand (robot, rawCommand) {
 	var parts = rawCommand.replace(/hubot/ig, robot.name).split('-');
 	var name = parts.shift().trim();
 	var description = parts.join('-').trim();
-	return  {
+	return {
 		name: name,
 		description: description
 	};
