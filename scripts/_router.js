@@ -2,6 +2,7 @@
 
 var consolidate = require('consolidate');
 var eachModule = require('each-module');
+var serveStatic = require('serve-static');
 
 module.exports = router;
 
@@ -16,6 +17,9 @@ function router (robot) {
 	app.engine('dust', consolidate.dust);
 	app.set('view engine', 'dust');
 	app.set('views', __dirname + '/../views');
+
+	// Serve static files
+	app.use(serveStatic(__dirname + '/../public'));
 
 	// Load routes
 	eachModule(__dirname + '/../routes', function (name, initRoute) {

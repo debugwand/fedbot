@@ -23,7 +23,8 @@
 		"hubot-pugme": "~0.1",
 		"hubot-redis-brain": "0.0.3",
 		"hubot-slack": "^3",
-		"request": "~2.60"
+		"request": "~2.60",
+		"serve-static": "~1.10"
 	},
 	"devDependencies": {
 		"jscs": "^1",

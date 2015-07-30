@@ -1,5 +1,5 @@
 
-<ul role="navigation">
+<ul role="navigation" class="navigation">
 	<li><a href="/">Home</a></li>
 	<li><a href="/help">Help</a></li>
 	<li><a href="/swear-jar">Swear Jar</a></li>

@@ -4,20 +4,28 @@
 
 	<meta charset="utf-8"/>
 	<title>{+title}{robotName}{/title}</title>
+	<meta name="robots" content="noindex"/>
+
+	<link rel="stylesheet" href="/normalize.css"/>
+	<link rel="stylesheet" href="/main.css"/>
 
 </head>
 <body>
 
-	<div role="banner">
-		{>"partial/header"/}
-	</div>
+	<div class="page">
 
-	<div role="main">
-		{+content/}
-	</div>
+		<div role="banner" class="header">
+			{>"partial/header"/}
+		</div>
 
-	<div role="banner">
-		{>"partial/footer"/}
+		<div role="main" class="content">
+			{+content/}
+		</div>
+
+		<div role="banner" class="footer">
+			{>"partial/footer"/}
+		</div>
+
 	</div>
 
 </body>

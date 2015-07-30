@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+body {
+	background-color: #f7f7f7;
+	color: #444;
+}
+
+
+/* Basic layout */
+
+.page {
+	max-width: 800px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+.header,
+.content,
+.footer {
+	padding: 20px;
+}
+
+
+/* Navigation */
+
+.navigation {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.navigation > li {
+	display: inline-block;
+}
+.navigation > li:before {
+	content: "|";
+	display: inline-block;
+	margin: 0 .5em;
+	color: #ccc;
+}
+.navigation > li:first-child:before {
+	display: none;
+}
+
+
+/* Footer */
+
+.footer {
+	text-align: center;
+	color: #777;
+}
