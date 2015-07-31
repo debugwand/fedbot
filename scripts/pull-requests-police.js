@@ -12,7 +12,6 @@ function policePullRequests (robot) {
 		var username = response.message.user.name;
 		var message = response.message.text;
 
-		//https://github.com/slackhq/hubot-slack/pull/215
 		if (room === 'pull-requests' && isPullRequestSpam(message)) {
 			robot.messageRoom(
 				username,
