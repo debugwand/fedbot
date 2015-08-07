@@ -15,6 +15,7 @@ module.exports.getValueByWord = getJarValueByWord;
 
 var swears = new RegExp('\\b(' + [
 	'(mother ?)?fuck(ing|ers?|ed|s)?',
+	'clusterfuck(s)?',
 	'shit(e|ting|ter|ty|test|s)?',
 	'piss(ing|er|ed|s)?',
 	'cunt(ed|ing|s)?',
