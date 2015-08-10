@@ -282,6 +282,10 @@ var quotes = [
 	{
 		text: 'I can\'t imagine many things worse than sitting in the bath listening to panpipes with a scented candle, while a tsunami of shit, piss, blood, and amniotic fluid roars out of my partner\'s vagina',
 		name: 'Hollie Kay'
+	},
+	{
+		text: 'And the most frustrating thing is he used to be a rent boy, back when he was a smack addict. But I missed my chance to bang him for money',
+		name: 'Andrew Mee'
 	}
 ];
 
