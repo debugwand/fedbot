@@ -33,6 +33,7 @@ var swears = new RegExp('\\b(' + [
 	'arses?',
 	'bastard(ing|s)?',
 	'damn',
+	'chelsea',
 	'crap(ped|ping|per|py|s)?',
 	'sod(ding|s)?',
 	'bugger(ed|y|s)?',
