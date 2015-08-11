@@ -5,6 +5,7 @@
 //   hubot swearjar - Count how much is in the swear jar
 //   hubot swearjar by name - Count how much is in the swear jar per person
 //   hubot swearjar by word - Count how many times each word is used
+//   hubot swearjar for <user> - Count how much a user owes the swear jar
 
 'use strict';
 
@@ -43,6 +44,7 @@ function swearJar (robot) {
 	robot.respond(/swear[ -]?jar$/i, getSwearJar.bind(null, robot));
 	robot.respond(/swear[ -]?jar by (name|person|user)$/i, getSwearJarByName.bind(null, robot));
 	robot.respond(/swear[ -]?jar by (swear|swearword|word)$/i, getSwearJarByWord.bind(null, robot));
+	robot.respond(/swear[ -]?jar for ([a-z\s\-\']+)$/i, getSwearJarByUser.bind(null, robot));
 }
 
 function logSwears (robot, response) {
@@ -99,6 +101,38 @@ function getSwearJarByWord (robot, response) {
 		content: {
 			fallback: text,
 			title: 'Which swear words you lot like to use:',
+			text: text,
+			color: '#9b7c41',
+			mrkdwn_in: ['text']
+		}
+	});
+}
+
+function getSwearJarByUser (robot, response) {
+	var name = response.match[1];
+	var users = robot.brain.usersForFuzzyName(name);
+	if (!users.length) {
+		return response.send('No user "' + name + '" was found');
+	}
+	if (users.length > 1) {
+		users = users.map(function (user) {
+			return user.name;
+		});
+		return response.send('Multiple matching users found: "' + users.join('", "') + '"');
+	}
+	var user = users[0];
+	var value = getJarValueByUser(robot, user.id);
+	var words = getJarWordsByUser(robot, user.id);
+	var text = words.map(function (row) {
+		return row.title + ': _' + row.value + '_';
+	}).join('\n');
+	robot.emit('slack-attachment', {
+		message: {
+			room: response.message.room
+		},
+		content: {
+			fallback: text,
+			title: user.name + ' owes £' + value + ' and likes to use these words:',
 			text: text,
 			color: '#9b7c41',
 			mrkdwn_in: ['text']
@@ -172,6 +206,34 @@ function getJarValueByWord (robot) {
 			title: word,
 			value: words[word]
 		};
+	});
+	records.sort(sortByValue).reverse();
+	return records;
+}
+
+function getJarValueByUser (robot, uid) {
+	var jar = loadSwearJar(robot);
+	var total = 0;
+	if (!jar[uid]) {
+		return total;
+	}
+	Object.keys(jar[uid]).forEach(function (word) {
+		total += jar[uid][word];
+	});
+	return total;
+}
+
+function getJarWordsByUser (robot, uid) {
+	var jar = loadSwearJar(robot);
+	var records = [];
+	if (!jar[uid]) {
+		return records;
+	}
+	Object.keys(jar[uid]).forEach(function (word) {
+		records.push({
+			title: word,
+			value: jar[uid][word]
+		});
 	});
 	records.sort(sortByValue).reverse();
 	return records;
