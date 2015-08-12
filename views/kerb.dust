@@ -22,7 +22,7 @@
 					{description}
 				</li>
 			{/traders}
-		</dl>
+		</ul>
 
 	{/days}
 
