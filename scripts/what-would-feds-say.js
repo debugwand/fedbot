@@ -286,6 +286,10 @@ var quotes = [
 	{
 		text: 'And the most frustrating thing is he used to be a rent boy, back when he was a smack addict. But I missed my chance to bang him for money',
 		name: 'Andrew Mee'
+	},
+	{
+		text: 'Jansher is the Anastasia Steele to Chuckle\'s Christian Grey',
+		name: 'Hollie Kay'
 	}
 ];
 
