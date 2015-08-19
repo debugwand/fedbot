@@ -9,7 +9,7 @@
 module.exports = flockOfPigeons;
 
 function flockOfPigeons (robot) {
-	robotRespond(/flock of pigeons/i, generateFlock.bind(null, robot));
+	robot.respond(/flock of pigeons/i, generateFlock.bind(null, robot));
 }
 
 function generateFlock (robot, response) {
