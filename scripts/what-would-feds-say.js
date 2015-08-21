@@ -290,6 +290,26 @@ var quotes = [
 	{
 		text: 'Jansher is the Anastasia Steele to Chuckle\'s Christian Grey',
 		name: 'Hollie Kay'
+	},
+	{
+		text: 'I learned when very young that a bottle of Jack Daniels goes off if you open it. It all must be consumed at once, like wine.',
+		name: 'Kathleen James'
+	},
+	{
+		text: 'its way too hot in here fr a hangver',
+		name: 'Glynn Phillips'
+	},
+	{
+		text: 'Have you shat on your front door mat before?',
+		name: 'Andrew Mee'
+	},
+	{
+		text: 'yeah you should probably piss on your doorstep',
+		name: 'Nick Call'
+	},
+	{
+		text: 'I even said just because you make me put it in the design doesn\'t mean it\'s going to happen',
+		name: 'Luke Stavenhagen'
 	}
 ];
 
