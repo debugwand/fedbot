@@ -17,13 +17,18 @@ function generateFlock (robot, response) {
 	var flockMembers = [
 		' ',
 		' ',
+		' ',
 		':pigeon_left:',
 		':pigeon_right:',
 		':pigeon_left:',
 		':pigeon_right:',
-		':sparkles:'
+		':sparkles:',
+		':pigeon_dance:',
+		':pigeon_dance_slow:',
+		':pigeon_hop:',
+		':pigeon_hop_left:'
 	];
-	var flockSize = 20;
+	var flockSize = 30;
 	var flock = '';
 
 	for (var i = flockSize - 1; i >= 0; i--) {
