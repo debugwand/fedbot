@@ -16,18 +16,18 @@
 		"dustjs-linkedin": "~2.7",
 		"each-module": "~1.2",
 		"hubot": "^2",
-		"hubot-google-images": "~0.1",
+		"hubot-google-images": "~0.2",
 		"hubot-help": "~0.1",
-		"hubot-heroku-keepalive": "0.0.4",
+		"hubot-heroku-keepalive": "~1.0",
 		"hubot-pugme": "~0.1",
 		"hubot-redis-brain": "0.0.3",
 		"hubot-slack": "^3",
-		"request": "~2.60",
+		"request": "~2.61",
 		"serve-static": "~1.10"
 	},
 	"devDependencies": {
-		"jscs": "^1",
-        "jshint": "^2"
+		"jscs": "^2",
+		"jshint": "^2"
 	},
 	"engines": {
 		"node": "0.10.x"
