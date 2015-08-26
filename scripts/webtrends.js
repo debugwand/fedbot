@@ -20,17 +20,17 @@ var request = require('request');
 
 var types = {
 	browsers: {
-		url: 'https://ws.webtrends.com/v3/Reporting/profiles/17716/reports/95df19b6d9f/?totals=all&start_period=current_month-3&end_period=current_month&period_type=agg&measures=0&sortby=Visits&format=json',
+		url: 'https://ws.webtrends.com/v3/Reporting/profiles/17730/reports/95df19b6d9f/?totals=all&start_period=current_month-3&end_period=current_month&period_type=agg&measures=0&sortby=Visits&format=json',
 		limit: 10,
 		title: 'Top 10 browsers in the last 3 months'
 	},
 	mobileBrowsers: {
-		url: 'https://ws.webtrends.com/v3/Reporting/profiles/17716/reports/yldOxrHP0P6/?totals=all&start_period=current_month-3&end_period=current_month&period_type=agg&measures=0&sortby=Visits&format=json',
+		url: 'https://ws.webtrends.com/v3/Reporting/profiles/17730/reports/yldOxrHP0P6/?totals=all&start_period=current_month-3&end_period=current_month&period_type=agg&measures=0&sortby=Visits&format=json',
 		limit: 10,
 		title: 'Top 10 mobile browsers in the last 3 months'
 	},
 	ieVersions: {
-		url: 'https://ws.webtrends.com/v3/Reporting/profiles/17716/reports/95df19b6d9e/?totals=all&start_period=current_month-3&end_period=current_month&period_type=agg&format=json',
+		url: 'https://ws.webtrends.com/v3/Reporting/profiles/17730/reports/95df19b6d9e/?totals=all&start_period=current_month-3&end_period=current_month&period_type=agg&format=json',
 		limit: 5,
 		title: 'Top 5 Internet Explorer versions in the last 3 months'
 	}
@@ -58,6 +58,7 @@ function topBrowsers (robot, type, response) {
 			content: {
 				fallback: '',
 				title: types[type].title,
+				image_url: 'http://www.nature.com/uploads/cms/pages/1547/top_item_image/Sugimoto_hero-abc1f99803ceed2ce5fbb9c4ddcf8859.jpg',
 				color: '#fff422',
 				fields: [],
 				mrkdwn_in: ['fields']
