@@ -310,6 +310,10 @@ var quotes = [
 	{
 		text: 'I even said just because you make me put it in the design doesn\'t mean it\'s going to happen',
 		name: 'Luke Stavenhagen'
+	},
+	{
+		text: 'Small, but perfectly formed',
+		name: 'Jack Watkins'
 	}
 ];
 
