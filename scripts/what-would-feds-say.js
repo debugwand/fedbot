@@ -314,6 +314,10 @@ var quotes = [
 	{
 		text: 'Small, but perfectly formed',
 		name: 'Jack Watkins'
+	},
+	{
+		text: 'Do you want your legs at 90 or 45°s?',
+		name: 'Darren Oakley'
 	}
 ];
 
