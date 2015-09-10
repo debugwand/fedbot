@@ -19,6 +19,7 @@
 		"hubot-google-images": "~0.2",
 		"hubot-help": "~0.1",
 		"hubot-heroku-keepalive": "~1.0",
+		"hubot-markov": "~1.4",
 		"hubot-pugme": "~0.1",
 		"hubot-redis-brain": "0.0.3",
 		"hubot-slack": "^3",

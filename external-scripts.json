@@ -2,6 +2,7 @@
 	"hubot-google-images",
 	"hubot-help",
 	"hubot-heroku-keepalive",
+	"hubot-markov",
 	"hubot-pugme",
 	"hubot-redis-brain"
 ]
