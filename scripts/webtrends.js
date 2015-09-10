@@ -58,7 +58,6 @@ function topBrowsers (robot, type, response) {
 			content: {
 				fallback: '',
 				title: types[type].title,
-				image_url: 'http://www.nature.com/uploads/cms/pages/1547/top_item_image/Sugimoto_hero-abc1f99803ceed2ce5fbb9c4ddcf8859.jpg',
 				color: '#fff422',
 				fields: [],
 				mrkdwn_in: ['fields']
