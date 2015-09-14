@@ -1,8 +1,20 @@
 // jshint unused: false
 'use strict';
 
+global.randomBetween = randomBetween;
+global.randomValue = randomValue;
 global.robotHear = robotHear;
 global.robotRespond = robotRespond;
+
+// Get a random number between min and max
+function randomBetween (min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Get a random array value
+function randomValue (array) {
+	return array[randomBetween(0, array.length - 1)];
+}
 
 // Trigger a response when the robot hears a term:
 //

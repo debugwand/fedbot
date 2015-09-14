@@ -5,6 +5,8 @@
 		"beforeEach": true,
 		"describe": true,
 		"it": true,
+		"randomBetween": true,
+		"randomValue": true,
 		"robotHear": true,
 		"robotRespond": true
 	},
