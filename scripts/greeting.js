@@ -16,6 +16,7 @@ function greetings (robot) {
 	}
 	process.on('exit', exitHandler);
 	process.on('SIGINT', exitHandler);
+	process.on('SIGTERM', exitHandler);
 }
 
 function randomHello () {
